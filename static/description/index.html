@@ -1,0 +1,137 @@
+<section style="background-color:#875A7B">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-12 text-center">
+                <h1 style="color:#ffffff; font-size:40px; font-weight:700">Editable Invoice Total</h1>
+                <p style="color:#f1e6ee; font-size:19px; line-height:1.5">
+                    Match a vendor bill's Total to the number on the paper invoice
+                    - without hunting through every line.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-12 text-center">
+                <h2 style="color:#4a4a4a; font-weight:600">The problem</h2>
+                <p style="color:#666666; font-size:16px; line-height:1.6">
+                    A supplier's invoice sometimes shows a total that doesn't quite match
+                    what you entered from the packing slip or purchase order - a rounding
+                    difference, a fee folded into one line, a discount applied at the
+                    bottom. Odoo's Total field on a vendor bill is read-only: it's a sum
+                    of the lines, not something you can just overwrite. So you go back and
+                    force one of the lines to a number that isn't really its price, just to
+                    make the totals agree.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background-color:#f8f7fa">
+    <div class="container py-5">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 text-center">
+                <h2 style="color:#4a4a4a; font-weight:600">How it works</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-12 mb-4 text-center">
+                <div style="color:#875A7B; font-size:32px; font-weight:700">1</div>
+                <h3 style="color:#4a4a4a; font-size:18px; font-weight:600">Open a draft vendor bill</h3>
+                <p style="color:#666666">Click the pencil icon next to the Total amount.</p>
+            </div>
+            <div class="col-md-4 col-12 mb-4 text-center">
+                <div style="color:#875A7B; font-size:32px; font-weight:700">2</div>
+                <h3 style="color:#4a4a4a; font-size:18px; font-weight:600">Type the real total</h3>
+                <p style="color:#666666">Enter the amount from the supplier's invoice and confirm.</p>
+            </div>
+            <div class="col-md-4 col-12 mb-4 text-center">
+                <div style="color:#875A7B; font-size:32px; font-weight:700">3</div>
+                <h3 style="color:#4a4a4a; font-size:18px; font-weight:600">Done</h3>
+                <p style="color:#666666">
+                    A single correction line absorbs the difference. Your itemized
+                    lines are untouched.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 text-center">
+                <h2 style="color:#4a4a4a; font-weight:600">Built to stay safe</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-12 mb-4">
+                <div class="card h-100 shadow-sm" style="border:none; border-radius:12px">
+                    <div class="card-body p-4">
+                        <h3 style="color:#875A7B; font-size:18px; font-weight:600">Your VAT stays correct</h3>
+                        <p style="color:#666666">
+                            The correction line is untaxed. Tax amounts on your real
+                            invoice lines are never recalculated or touched.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-4">
+                <div class="card h-100 shadow-sm" style="border:none; border-radius:12px">
+                    <div class="card-body p-4">
+                        <h3 style="color:#875A7B; font-size:18px; font-weight:600">Draft-only, by design</h3>
+                        <p style="color:#666666">
+                            The Total is only editable while the bill is still a draft -
+                            exactly where the native Total field would otherwise sit
+                            read-only. Nothing changes about a posted invoice.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-4">
+                <div class="card h-100 shadow-sm" style="border:none; border-radius:12px">
+                    <div class="card-body p-4">
+                        <h3 style="color:#875A7B; font-size:18px; font-weight:600">Cleans up after itself</h3>
+                        <p style="color:#666666">
+                            Set the Total back to the original sum of the lines and the
+                            correction line is removed automatically - no manual tidy-up.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background-color:#f8f7fa">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-12 text-center">
+                <h2 style="color:#4a4a4a; font-weight:600">Where it applies</h2>
+                <p style="color:#666666; font-size:16px; line-height:1.6">
+                    Vendor bills, vendor credit notes, and vendor receipts
+                    (<code>in_invoice</code>, <code>in_refund</code>, <code>in_receipt</code>)
+                    in draft state. Requires the Invoicing / Accounting app. No new
+                    models, no extra configuration, no security rules to set up -
+                    install it and the pencil icon shows up where it's relevant.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <p style="color:#999999; font-size:14px">
+                    Hadron for Business sp. z o.o. &middot; support: TODO@hadronforbusiness.com
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
