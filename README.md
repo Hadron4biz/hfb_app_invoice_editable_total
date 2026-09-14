@@ -32,3 +32,7 @@ Extracted from a client-specific module (`hfb_bannerstop_invoice_total`) as
 a pilot run of the "generic app extraction" workflow. Not yet submitted to
 Odoo Apps - missing `static/description/icon.png` and
 `static/description/index.html` (Store listing page).
+
+Repo is currently named `hfb_app_test` (leftover from the pipeline test run,
+no permission yet to rename to `hfb_app_invoice_editable_total` - see repo
+settings once that's sorted).
