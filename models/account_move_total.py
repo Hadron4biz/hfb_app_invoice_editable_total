@@ -1,4 +1,33 @@
 # -*- coding: utf-8 -*-
+#################################################################################
+#
+# Odoo, Open Source Management Solution
+# Copyright (C) 2017-2026 Hadron for Business sp. z o.o. (http://hadronforbusiness.com)
+#
+# This program is proprietary software, licensed under the Odoo Proprietary
+# License v1.0 (OPL-1). Its use is governed by the Odoo Apps terms available
+# at https://www.odoo.com/documentation/user/legal/licenses.html and the
+# license agreement accepted at purchase / installation.
+#
+# It is forbidden to publish, distribute, sublicense, or sell copies of the
+# Software or modified copies of the Software.
+#
+# The above copyright notice and this permission notice must be included in
+# all copies or substantial portions of the Software.
+#
+#################################################################################
+""" @version	17.0.1.0.0
+	@owner  Hadron for Business
+	@author Hadron for Business sp. z o.o.
+	@date   2026.09.14
+
+	Editable Invoice Total
+	Lets the user manually override the Total on a draft vendor bill /
+	refund / receipt. The difference between the entered lines and the
+	requested total is booked onto a single, untaxed correction line, so
+	VAT on the real lines is never touched and the invoice stays balanced
+	(Total = sum of lines) through Confirm.
+"""
 from odoo import _, models
 
 PURCHASE_MOVE_TYPES = ('in_invoice', 'in_refund', 'in_receipt')
@@ -53,3 +82,5 @@ class AccountMove(models.Model):
                 'account_id': fallback_account.id if fallback_account else False,
             })]
         return True
+
+#EoF

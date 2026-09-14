@@ -41,6 +41,9 @@ balanced (Total = sum of lines) so it survives Confirm.
         'account',
     ],
     'data': [],
+    'images': [
+        'static/description/banner_screenshot.png',
+    ],
     'assets': {
         'web.assets_backend': [
             'hfb_app_invoice_editable_total/static/src/components/tax_totals_editable/tax_totals_editable.js',
