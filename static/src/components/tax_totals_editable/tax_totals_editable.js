@@ -1,5 +1,12 @@
 /** @odoo-module **/
 
+// 18.0 note: core Odoo reworked TaxTotalsComponent - totals.amount_total was
+// renamed totals.total_amount_currency, and the pre-formatted
+// totals.formatted_amount_total string was dropped in favor of a
+// formatMonetary(value) method on the component. The `currency` getter this
+// patch used to read digits from is gone too, so the edit input now falls
+// back to formatFloat()'s default digits.
+
 import { patch } from "@web/core/utils/patch";
 import { parseFloat } from "@web/views/fields/parsers";
 import { formatFloat } from "@web/core/utils/numbers";
@@ -20,8 +27,7 @@ patch(TaxTotalsComponent.prototype, {
         this.totalState = useState({ value: "readonly" });
         onPatched(() => {
             if (this.totalState.value === "edit" && this.inputTotal.el) {
-                const digits = this.currency && this.currency.digits;
-                this.inputTotal.el.value = formatFloat(this.totals.amount_total, { digits });
+                this.inputTotal.el.value = formatFloat(this.totals.total_amount_currency);
                 this.inputTotal.el.focus();
             }
         });
@@ -50,7 +56,7 @@ patch(TaxTotalsComponent.prototype, {
      */
     async _onChangeTotalValue() {
         this.setTotalState("disable");
-        const oldValue = this.totals.amount_total;
+        const oldValue = this.totals.total_amount_currency;
         let newValue;
         try {
             newValue = parseFloat(this.inputTotal.el.value);

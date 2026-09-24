@@ -19,8 +19,8 @@
                 </t>
                 <t t-else="">
                     <span class="o_tax_group_edit" t-on-click.prevent="() => this.setTotalState('edit')">
-                        <span name="amount_total" class="oe_subtotal_footer_separator" style="font-size: 1.3em; font-weight: bold; white-space: nowrap;">
-                            <i class="fa fa-pencil me-2"/><t t-out="totals.formatted_amount_total"/>
+                        <span name="amount_total" class="oe_subtotal_footer_separator" dir="ltr" style="font-size: 1.3em; font-weight: bold; white-space: nowrap;">
+                            <i class="fa fa-pencil me-2"/><t t-out="formatMonetary(totals.total_amount_currency)"/>
                         </span>
                     </span>
                 </t>
@@ -28,8 +28,9 @@
             <t t-else="">
                 <span
                     name="amount_total"
-                    t-att-class="Object.keys(totals.groups_by_subtotal).length > 0 ? 'oe_subtotal_footer_separator' : ''"
-                    t-out="totals.formatted_amount_total"
+                    t-att-class="{'oe_subtotal_footer_separator': totals.has_tax_groups}"
+                    dir="ltr"
+                    t-out="formatMonetary(totals.total_amount_currency)"
                     style="font-size: 1.3em; font-weight: bold; white-space: nowrap;"
                 />
             </t>
