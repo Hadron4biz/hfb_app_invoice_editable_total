@@ -3,16 +3,16 @@
 
     <t t-name="hfb_app_invoice_editable_total.TaxTotalsField" t-inherit="account.TaxTotalsField" t-inherit-mode="extension">
         <xpath expr="//span[@name='amount_total']" position="replace">
-            <t t-if="totalEditable">
-                <t t-if="['edit', 'disable'].includes(totalState.value)">
+            <t t-if="this.totalEditable">
+                <t t-if="['edit', 'disable'].includes(this.totalState.value)">
                     <span class="o_tax_group_edit_input">
                         <input
                             type="text"
-                            t-ref="totalValueInput"
+                            t-ref="this.totalValueInput"
                             class="o_field_float o_field_number o_input"
-                            t-att-disabled="totalState.value === 'disable'"
-                            t-on-change.prevent="_onChangeTotalValue"
-                            t-on-blur="_onChangeTotalValue"
+                            t-att-disabled="this.totalState.value === 'disable'"
+                            t-on-change.prevent="this._onChangeTotalValue"
+                            t-on-blur="this._onChangeTotalValue"
                             style="font-size: 1.3em; font-weight: bold;"
                         />
                     </span>
@@ -20,7 +20,7 @@
                 <t t-else="">
                     <span class="o_tax_group_edit" t-on-click.prevent="() => this.setTotalState('edit')">
                         <span name="amount_total" class="oe_subtotal_footer_separator" dir="ltr" style="font-size: 1.3em; font-weight: bold; white-space: nowrap;">
-                            <i class="fa fa-pencil me-2"/><t t-out="formatMonetary(totals.total_amount_currency)"/>
+                            <i class="fa fa-pencil me-2"/><t t-out="this.formatMonetary(totals.total_amount_currency)"/>
                         </span>
                     </span>
                 </t>
@@ -30,7 +30,7 @@
                     name="amount_total"
                     t-att-class="{'oe_subtotal_footer_separator': totals.has_tax_groups}"
                     dir="ltr"
-                    t-out="formatMonetary(totals.total_amount_currency)"
+                    t-out="this.formatMonetary(totals.total_amount_currency)"
                     style="font-size: 1.3em; font-weight: bold; white-space: nowrap;"
                 />
             </t>
