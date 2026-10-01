@@ -32,7 +32,7 @@ The difference is booked as a single, untaxed correction line - your real
 invoice lines and their VAT amounts are never touched, and the invoice stays
 balanced (Total = sum of lines) so it survives Confirm.
 """,
-    'version': "19.0.1.0.0",
+    'version': "20.0.1.0.0",
     'author': "Hadron for Business sp. z o.o.",
     'website': "http://hadronforbusiness.com",
     'license': "OPL-1",
